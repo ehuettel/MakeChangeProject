@@ -6,7 +6,7 @@ public class MakeChange {
 
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
-
+		
 		System.out.print("What is the total of your purchase: ");
 
 		double purchaseTotal = kb.nextDouble();
@@ -27,19 +27,19 @@ public class MakeChange {
 
 		} else {
 
-			System.out.println("Your total change is $" + change);
-
+			System.out.println("Your total change is $" + (float) change);
+			
 		}
 
-		double remainder = change;
+		double remainder = change + .005;
 
 		if (remainder >= 20) {
 
 			int twenties = (int) remainder / 20;
-
+			
 			remainder %= 20;
 
-			System.out.println(twenties + " twenty dollar bills");
+			System.out.println(twenties + " twenty dollar bill(s)");
 
 		}
 
@@ -49,7 +49,7 @@ public class MakeChange {
 
 			remainder %= 10;
 
-			System.out.println(tens + " ten dollar bills");
+			System.out.println(tens + " ten dollar bill(s)");
 
 		}
 
@@ -59,7 +59,7 @@ public class MakeChange {
 
 			remainder %= 5;
 
-			System.out.println(fives + " five dollar bills");
+			System.out.println(fives + " five dollar bill(s)");
 
 		}
 
@@ -69,7 +69,7 @@ public class MakeChange {
 
 			remainder %= 1;
 
-			System.out.println(ones + " one dollar bills");
+			System.out.println(ones + " one dollar bill(s)");
 
 		}
 
@@ -79,7 +79,7 @@ public class MakeChange {
 
 			remainder %= .25;
 
-			System.out.println((int) quarters + " quarters");
+			System.out.println((int) quarters + " quarter(s)");
 
 		}
 
@@ -89,27 +89,25 @@ public class MakeChange {
 
 			remainder %= .10;
 
-			System.out.println((int) dimes + " dimes");
+			System.out.println((int) dimes + " dime(s)");
 
 		}
 
 		if (remainder >= .05) {
 
-			double nickels = (double) remainder / .05;
+			double nickels = (double) (remainder) / .05;
 
 			remainder %= .05;
 
-			System.out.println((int) nickels + " nickels");
+			System.out.println((int) nickels + " nickel(s)");
 
 		}
 
 		if (remainder >= .01) {
 
-			double pennies = (double) remainder / .01;
+			double pennies = (float) (remainder) / .01;
 
-			remainder %= .01;
-
-			System.out.println((int) Math.round(pennies) + " pennies");
+			System.out.println((int) (pennies) + " penny(ies)");
 
 		}
 
